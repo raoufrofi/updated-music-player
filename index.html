@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <title>Music Player</title>
+  </head>
+  <body class="">
+    <section class="card">
+      <h2>NCS top 10 songs</h2>
+      <section class="title-bar">
+        <div class="title">
+          <p id="title">Title of Song</p>
+        </div>
+        <div class="volume">
+          <!-- <div class="volume-inner"></div> -->
+          <label for="volumeBtn">Volume</label>
+          <input id="volumeBtn" type="range" min="0" max="10" value="4" />
+        </div>
+      </section>
+      <div class="music-box">
+        <div class="circle">
+          <img id="record" src="Thumbnail/kosandra.jpg" alt="" />
+        </div>
+        <ul>
+          <li class="cutter">
+            <label for="length"></label>
+            <input
+              title="length"
+              id="length"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+            />
+          </li>
+          <li><i class="fa-solid fa-backward"></i></li>
+          <li><i class="fa-solid fa-play"></i></li>
+          <li><i class="fa-solid fa-forward"></i></li>
+        </ul>
+        <audio id="audio" src="music/" preload="metadata"></audio>
+      </div>
+    </section>
+
+    <section class="blurred-bg">
+      <img id="blurred-bg" src="Thumbnail/kosandra.jpg" alt="" />
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

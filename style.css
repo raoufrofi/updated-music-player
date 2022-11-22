@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(orangered, rgb(16, 16, 122));
+}
+
+.card {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+  width: min(400px, 95%);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.card h2 {
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(16, 16, 58);
+}
+
+.title-bar {
+  padding-inline: 1rem;
+  align-self: end;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  background-color: rgba(255, 255, 255, 0.479);
+  border-radius: 5px;
+  width: 60%;
+  padding: 0.25rem;
+}
+
+#title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(16, 16, 58);
+  animation: fading 2s linear infinite alternate;
+}
+
+@keyframes fading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.volume {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  /* align-items: center; */
+  cursor: pointer;
+}
+
+.volume input {
+  width: 80px;
+}
+
+.volume label {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: rgb(16, 16, 58);
+}
+
+.music-box {
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  height: 75px;
+  border-radius: 1px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: right;
+
+  position: relative;
+}
+
+.music-box .cutter {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  /* background-color: white; */
+  top: -1rem;
+  left: -1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.cutter input {
+  width: 100%;
+}
+
+.music-box ul {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.circle {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  height: calc(50px + 1vw);
+  width: calc(50px + 1vw);
+  max-width: 75px;
+  max-height: 75px;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  background-color: rgb(16, 16, 58);
+  padding: 0.5rem;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-box.play .circle img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+i {
+  color: rgb(16, 16, 122);
+  cursor: pointer;
+}
+
+.fa-play,
+.fa-pause {
+  font-size: 2rem;
+}
+
+.disabled {
+  color: rgb(180, 175, 175);
+  cursor: no-drop;
+}
+
+/* BLURRED BACKGROUND */
+.blurred-bg {
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 5px solid white;
+  z-index: -10;
+  overflow: hidden;
+  /* filter: blur(10px); */
+  animation: blur 5s linear infinite alternate;
+  width: max-content;
+}
+
+.blurred-bg img{
+  height: 100%;
+}
+
+#songtitle{
+  position: absolute;
+  color: white;
+  z-index: 100;
+  font-size: 8em;
+  top: 0;
+}
+
+
+@keyframes blur {
+  from {
+    filter: blur(2px);
+  }
+  to {
+    filter: blur(15px);
+  }
+}
+
+
